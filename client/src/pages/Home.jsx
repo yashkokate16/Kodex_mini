@@ -80,21 +80,60 @@ function Home() {
         </div>
       </div>
     ) : (
-      <div className="flex w-full h-full min-h-0 overflow-hidden">
+      // <div className="flex w-full h-full min-h-0 overflow-hidden">
     
-         <aside className="hidden md:flex shrink-0">
+      //    <aside className="hidden md:flex shrink-0">
+      //   <SideBar />
+      //    </aside>
+
+      //   <main className="flex-1 min-w-0 min-h-0 bg-red-500 ">
+      //     <ChatArea />
+      //   </main>
+
+      //   <aside className="hidden lg:flex shrink-0" >
+      //   <Artifact />
+      //    </aside>
+
+      // </div>
+
+//       <div className="flex w-full h-full min-h-0 overflow-hidden">
+
+//     {/* Sidebar */}
+//     <aside className="hidden md:flex shrink-0">
+//         <SideBar />
+//     </aside>
+
+//     {/* Chat area takes the remaining width */}
+//     <main className="flex-1 min-w-0 min-h-0 overflow-hidden">
+//         <ChatArea />
+//     </main>
+
+//     {/* Fixed-width Artifact panel */}
+//     <aside className="hidden lg:flex w-[380px] shrink-0 min-h-0 overflow-hidden border-l border-white/10">
+//         <Artifact />
+//     </aside>
+
+// </div>
+
+<div className="flex h-full w-full min-h-0 min-w-0 overflow-hidden">
+
+    {/* Sidebar */}
+    <aside className="hidden md:flex h-full shrink-0">
         <SideBar />
-         </aside>
+    </aside>
 
-        <main className="flex-1 min-w-0 min-h-0 bg-red-500 ">
-          <ChatArea />
-        </main>
+    {/* Chat area */}
+    <main className="flex-1 min-w-0 min-h-0 overflow-hidden">
+        <ChatArea />
+    </main>
 
-        <aside className="hidden lg:flex shrink-0">
+    {/* Artifact panel */}
+    <aside className="hidden lg:flex h-full w-[420px] min-w-[420px] shrink-0 overflow-hidden border-l border-white/10">
         <Artifact />
-         </aside>
+    </aside>
 
-      </div>
+</div>
+
     )}
   </div>
 )

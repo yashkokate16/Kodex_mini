@@ -1,7 +1,8 @@
+export let searchAgent = async (state) => {
+    console.log("🔥 HELLO FROM SEARCH AGENT", state);
 
-
-
-
-export let searchAgent = async (params) => {
-console.log("hello from search agent", params)
-}
+    return {
+        ...state,
+        aiResponse: "SEARCH AGENT IS WORKING"
+    };
+}; 

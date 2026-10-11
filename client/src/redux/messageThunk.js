@@ -21,7 +21,8 @@ export let sendMessage = createAsyncThunk(
         try {
             let response = await axiosInstance.post("/api/agent/chat", data);
             console.log("Message sent and response received:", response);
-            return response.data.response;
+            // return response.data.response;
+            return response.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message || "Failed to send message");
         }   

@@ -50,7 +50,7 @@ export let getConversations = async (req, res) => {
 
 export let saveMessage = async (req, res) => {
     try{
-        let {conversationId, role, content} = req.body;
+        let {conversationId, role, content, artifacts} = req.body;
 
         if(!conversationId || !role || !content){
             return res.status(400).json({
@@ -61,7 +61,8 @@ export let saveMessage = async (req, res) => {
         let message = await Message.create({
             conversationId,
             role,
-            content
+            content,
+            artifacts
         })
 
         return res.status(201).json({

@@ -45,7 +45,7 @@ function ChatArea() {
     }, [selectedConversation, dispatch]);
 
     return (
-        <div className="w-full h-full min-h-0 bg-[#0d0f14] flex flex-col">
+       <div className="flex h-full min-h-0 w-full min-w-0 flex-col overflow-hidden bg-[#0d0f14]">
 
             {/* Navbar */}
             <NavBar />

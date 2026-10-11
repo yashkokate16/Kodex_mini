@@ -8,5 +8,6 @@ export let agentState = Annotation.Root({
     aiResponse:Annotation(),
     agent:Annotation(),
     conversationId:Annotation(),
+    artifacts:Annotation(),
 })
 
