@@ -14,6 +14,15 @@ const groq = new ChatGroq({
     // other params...
 })
 
+let PDFGroq = new ChatGroq({
+    apiKey: process.env.GROQ_API_KEY,
+    model: "openai/gpt-oss-120b",
+    temperature: 0.2,
+    
+})
+
+
+
 
 let openRouter = new ChatOpenRouter({
     model: "deepseek/deepseek-chat",
@@ -41,6 +50,9 @@ export let getModel = async (agent) => {
     }
     if(agent === "coding") {
         return openRouter;
+    }
+    if(agent === "pdf") {
+        return PDFGroq;
     }
     else{
         return groq;

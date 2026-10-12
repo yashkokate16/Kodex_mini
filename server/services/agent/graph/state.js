@@ -9,5 +9,9 @@ export let agentState = Annotation.Root({
     agent:Annotation(),
     conversationId:Annotation(),
     artifacts:Annotation(),
+
+    pdfUrl: Annotation(),
+  pdfKey: Annotation(),
+  pdfFilename: Annotation(),
 })
 

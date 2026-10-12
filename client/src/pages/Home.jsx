@@ -128,7 +128,7 @@ function Home() {
     </main>
 
     {/* Artifact panel */}
-    <aside className="hidden lg:flex h-full w-[420px] min-w-[420px] shrink-0 overflow-hidden border-l border-white/10">
+    <aside className="hidden lg:flex h-full w-[380px] shrink-0 overflow-hidden border-l border-white/10">
         <Artifact />
     </aside>
 

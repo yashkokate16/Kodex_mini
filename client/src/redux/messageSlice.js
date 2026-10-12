@@ -8,7 +8,8 @@ let messageSlice = createSlice({
     initialState: {
         messages: [],
         isLoading: false,
-        artifacts: []
+        artifacts: [],
+        latestPdf:null
     },
 
     reducers: {
@@ -37,10 +38,22 @@ let messageSlice = createSlice({
             .addCase(sendMessage.pending, (state) => {
                 state.isLoading = true;
             })
-            .addCase(sendMessage.fulfilled, (state, action) => {
-                state.artifacts = action.payload.artifacts ?? [];
-                state.isLoading = false;
-            })
+.addCase(sendMessage.fulfilled, (state, action) => {
+    const { response, artifacts, pdf } = action.payload;
+
+    // Add the assistant's message to chat
+    state.messages.push({
+        role: "assistant",
+        content: response,
+        artifacts: artifacts ?? [],
+        pdf: pdf ?? null,
+    });
+
+    state.artifacts = artifacts ?? [];
+    state.latestPdf = pdf ?? null;
+    state.isLoading = false;
+})
+
             .addCase(sendMessage.rejected, (state) => {
                 state.isLoading = false;
             });
